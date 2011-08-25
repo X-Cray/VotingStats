@@ -1,0 +1,7 @@
+indexes:
+- kind: PhotoInfo
+  properties:
+  - name: date
+    direction: desc
+  - name: votes_count
+    direction: desc

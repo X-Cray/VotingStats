@@ -1,0 +1,8 @@
+{% if photos|length %}
+[{% for photo in photos %}{
+	"name": "Photo {{ photo.id }}",
+	"data": [{% for vote in photo.votes %}
+		{ "x": {{ vote.intdate }}, "y": {{ vote.vote }} }{% if not forloop.last %}, {% endif %}{% endfor %}
+	]
+}{% if not forloop.last %}, {% endif %}{% endfor %}]
+{% endif %}

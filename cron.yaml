@@ -1,0 +1,19 @@
+cron:
+- description: Fetch votes count from photo pages
+  url: /parse
+  schedule: every 40 minutes
+- description: Generate main page output and cache it
+  url: /
+  schedule: every 5 minutes
+- description: Grab insorg proxies 1
+  url: /grab1
+  schedule: every 1 minutes
+- description: Grab insorg proxies 2
+  url: /grab2
+  schedule: every 1 minutes
+- description: Vote for photos
+  url: /vote
+  schedule: every 1 minutes
+- description: Clean up the datastore
+  url: /clean
+  schedule: every 50 minutes

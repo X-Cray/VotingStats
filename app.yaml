@@ -1,0 +1,26 @@
+application: votingstats
+version: 22
+runtime: python
+api_version: 1
+
+handlers:
+- url: /js
+  static_dir: js
+
+- url: /css
+  static_dir: css
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /remote_api
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+  login: admin
+
+- url: /.*
+  script: index.py
+
+builtins:
+- datastore_admin: on
+- remote_api: on
